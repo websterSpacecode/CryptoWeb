@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Svet kryptomien</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/welcome.css">
+
+</head>
+<body>
+
+<nav class="navbar fixed-top navbar-toggleable-md" id="home">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <h2 class="navbar-brand"><a href="#header"></a>CryptoWeb</h2>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#header">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#footer">About</a>
+            </li>
+        </ul>
+        <form class="form-inline" action="login.html" method="get">
+            <button class="btn btn-outline-warning" type="submit">Log in</button>
+        </form>
+    </div>
+</nav>
+
+<header id="header">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img class="d-block img-responsive" src="img/bitcoin.jpg" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>“The future of money is digital currency.”</h1>
+                    <p>Bill Gates</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-responsive" src="img/rig.jpg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>“You can’t stop things like Bitcoin. It will be everywhere and the world will have to
+                        readjust.”</h1>
+                    <p>John McAfee</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-responsive" src="img/gold.jpg" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>“The blockchain keeps everyone honest, and a whole layer of banking bureaucracy is removed,
+                        lowering
+                        costs.”</h1>
+                    <p>Paul Vigna</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="features">
+    <div class="container text-center">
+        <h2 id="features_text">Discover all features</h2>
+        <br>
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <span class="fa fa-server logo"></span>
+                <h4>Powerful API</h4>
+                <p class="feat">Thanks to CoinmarketCap API you can easily find your favourite cryptocurrencies</p>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <span class="fa fa-lock logo"></span>
+                <h4>Secure</h4>
+                <p class="feat">No more security weaknesses because Firebase will take care of it</p>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <span class="fa fa-heart logo"></span>
+                <h4>User friendly</h4>
+                <p class="feat">With our lovely interface you will never be lost</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="video">
+    <div id="video-container" class="container">
+        <div class="row">
+            <div class="embed-responsive embed-responsive-16by9 col-md-7 col-sm-12">
+                <iframe class="embed-responsive-item" id="youtube-link"
+                        src="https://www.youtube.com/embed/pFJCdnRMZX8">
+                </iframe>
+            </div>
+            <div class="col-md-5 col-sm-12">
+                <div id="stay-tuned-text">
+                    <h3 id="stay-informed">Stay tuned for our videos</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 col-md-5">
+                <h3 id="message-text">Here you can leave your message</h3>
+            </div>
+            <div class="col-sm-7 col-md-7">
+                <form class="form-horizontal" action="mailto:hreskodavid57@gmail.com" method="post">
+                    <fieldset>
+
+                        <div class="form-group">
+                            <label class="col" for="email" id="email-text">Your E-mail</label>
+                            <div class="col">
+                                <input id="email" name="email" type="text" placeholder="Your email"
+                                       class="form-control"
+                                       pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*"
+                                       required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col" for="message" spellcheck="true">Your message</label>
+                            <div class="col">
+                                    <textarea class="form-control" id="message" name="message"
+                                              placeholder="Please enter your message here..." rows="5"
+                                              required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col text-right">
+                                <button type="submit" class="btn btn-primary btn-lg" id="send-button">Send message
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="map"></div>
+<script src="js/googleMaps.js"></script>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <p class="footer-p">Copyright © Cryptoweb 2018</p>
+            </div>
+            <div class="col-4">
+                <p class="footer-p">Created by Dávid Hreško</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5k3KoPoqiqlPSNUQGDfdvrm55uNL1QBc&callback=initMap">
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="js/scrollAnimation.js"></script>
+</body>
+</html>

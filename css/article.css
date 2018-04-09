@@ -1,0 +1,137 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #2c3e50;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(241, 196, 15)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-brand {
+    color: #f1c40f;
+    font-size: 25px;
+}
+
+.nav-link {
+    font-size: 20px;
+    color: white;
+}
+
+.nav-link:hover {
+    color: #f1c40f;
+}
+
+.btn {
+    color: white;
+    background-color: #f1c40f;
+    border-color: #f1c40f;
+    text-decoration: none;
+}
+
+.btn:hover, .btn:active {
+    background-color: #2c3e50;
+    border-color: #f1c40f;
+    color: white;
+}
+
+.active-article {
+    text-decoration: underline;
+    text-decoration-color: #f1c40f;
+}
+
+.btn-primary {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    bottom: 0;
+    position: absolute;
+}
+
+.jumbotron {
+    margin-top: 60px;
+    margin-bottom: 0;
+    background-color: #ecf0f1;
+}
+
+.card-title {
+    font-size: 25px;
+    padding: 10px;
+}
+
+.card-text {
+     font-style: normal;
+     padding-left: 10px;
+     padding-right: 10px;
+ }
+
+.card-date {
+    font-style: normal;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.card {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    height: 500px;
+}
+
+
+@media only screen and (max-width: 576px) {
+    .card-img-top {
+        height: 200px;
+    }
+    .card-title {
+        font-size: 20px;
+    }
+    .card-text {
+        font-size: 15px ;
+    }
+
+    .card {
+        margin-left: 0;
+        height: 400px;
+    }
+}
+
+#options {
+    background-color: #7f8c8d;
+}
+
+#create-article {
+    margin: 10px;
+}
+
+#previous {
+    width: 100px;
+    margin: 10px;
+}
+
+#next {
+    width: 100px;
+    margin: 10px;
+}
+
+#indicator-page {
+    padding-top: 15px;
+    font-size: 17px;
+}
+
+.footer-p {
+    color: white;
+    font-size: 20px;
+    font-style: normal;
+}
+
+#footer {
+    background-color: #2c3e50;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+

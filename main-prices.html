@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/main-prices.css">
+
+    <title>Cryptoweb | Prices</title>
+</head>
+<body onload="getPrices()">
+
+<nav class="navbar fixed-top navbar-toggleable-md">
+    <span class="navbar-brand ">CryptoWeb</span>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="main-news.html">News <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a id="active-prices" class="nav-link" href="main-prices.html">Prices</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Community
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="article.html">Articles</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" onclick="logOut()">Log out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 id="jumbotron-main-text" class="display-4">Latest market prices</h1>
+        <p class="lead">Check the prices of the most popular cryptocurrencies on CoinmarketCap</p>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-8">
+            <span id="updated"></span>
+        </div>
+        <div class="col-xl-4" id="search-panel">
+            <input type="text" class="form-control" id="search" placeholder="Search">
+            <button id="search-button" class="btn btn-primary fa fa-search" onclick="search()"></button>
+        </div>
+    </div>
+</div>
+
+
+<div class="table-responsive">
+
+    <script id="table-template" type="text/template">
+        <tr>
+            <td class="rank" scope="row">{{rank}}</td>
+            <td class="name">{{name}}</td>
+            <td class="symbol">{{symbol}}</td>
+            <td class="market-cap">{{market_cap_eur}}</td>
+            <td class="price">{{price_eur}}</td>
+            <td class="change">{{percent_change_24h}} %</td>
+        </tr>
+    </script>
+
+    <table class="table table-striped">
+        <thead id="thead">
+        <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Name</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Market Cap (€)</th>
+            <th scope="col">Price (€)</th>
+            <th scope="col">Change (24h)</th>
+        </tr>
+        </thead>
+        <tbody id="rows">
+
+        </tbody>
+    </table>
+</div>
+
+<div id="no-result">
+
+</div>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <p class="footer-p">Copyright © Cryptoweb 2018</p>
+            </div>
+            <div class="col-4">
+                <p class="footer-p">Created by Dávid Hreško</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js">
+</script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAWT1aUk_KXKrrOhEINHXZlalqtmHCNLXI",
+        authDomain: "cryptocurrency-wt.firebaseapp.com",
+        databaseURL: "https://cryptocurrency-wt.firebaseio.com",
+        projectId: "cryptocurrency-wt",
+        storageBucket: "cryptocurrency-wt.appspot.com",
+        messagingSenderId: "719035970697"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+
+<script src="js/restriction.js"></script>
+<script src="js/firebase.js"></script>
+<script src="js/prices.js"></script>
+
+</body>
+</html>

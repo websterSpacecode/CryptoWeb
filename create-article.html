@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/create-article.css">
+
+    <title>Cryptoweb | Create article</title>
+</head>
+<body>
+
+<nav class="navbar fixed-top navbar-toggleable-md">
+    <span class="navbar-brand ">CryptoWeb</span>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="main-news.html">News <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="main-prices.html">Prices</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active-article" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Community
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="article.html">Articles</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" onclick="logOut()">Log out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div id="fill-container" class="container">
+    <form id="article-form" method="post" action="badProcessing.html">
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" name="author" id="author" maxlength="100" size="50"
+                           placeholder="Enter your name">
+
+                </div>
+                <div class="col-md-6">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" size="50" maxlength="100" pattern="\S[\S\s]*"
+                           name="title"
+                           id="title" placeholder="Title" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea class="form-control" id="content" name="content" spellcheck="true" lang="en" rows="6"
+                      placeholder="Enter your text" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="tags">Tags</label>
+            <input type="text" class="form-control" size="50" maxlength="100" name="tags"
+                   id="tags" placeholder="Tag1, Tag2">
+        </div>
+
+        <div class="form-group">
+            <label for="imageLink">URL</label>
+            <input type="url" class="form-control" size="50" maxlength="100" name="imageLink" id="imageLink"
+                   placeholder="Image URL">
+            <div id="status" class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <label for="flElm">File input</label>
+                    <input type="file" class="form-control-file" id="flElm" name="file"
+                           accept="image/jpeg, image/png, image/jpg">
+                </div>
+                <div id="send-to-server" class="col-lg-12">
+                    <button type="button" id="btFileUpload">Send to server</button>
+                </div>
+            </div>
+        </div>
+
+        <button id="save" type="submit" class="btn btn-primary">Save article</button>
+
+    </form>
+</div>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <p class="footer-p">Copyright © Cryptoweb 2018</p>
+            </div>
+            <div class="col-4">
+                <p class="footer-p">Created by Dávid Hreško</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAWT1aUk_KXKrrOhEINHXZlalqtmHCNLXI",
+        authDomain: "cryptocurrency-wt.firebaseapp.com",
+        databaseURL: "https://cryptocurrency-wt.firebaseio.com",
+        projectId: "cryptocurrency-wt",
+        storageBucket: "cryptocurrency-wt.appspot.com",
+        messagingSenderId: "719035970697"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+<script>window.Mustache || document.write('<script src="js/libs/mustache.min.js"><\/script>')</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery.min.js"><\/script>')</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+
+<script src="js/queryStringProcessing.js"></script>
+<script src="js/articleForm.js"></script>
+<script src="js/firebase.js"></script>
+<script src="js/restriction.js"></script>
+
+</body>
+</html>
